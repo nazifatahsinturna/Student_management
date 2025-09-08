@@ -12,8 +12,8 @@ def menu(): #function for menu
     print("4. Add Grade for Student")
     print("5. Display Student Details")
     print("6. Display Course Details")
-    print("7. Save data to File")
-    print("8. Load Data from file")
+    #print("7. Save data to File") these should be auto
+    #print("8. Load Data from file")
     print("0. Exit")
     try:
       choice = int(input("Select Option: "))
@@ -115,7 +115,7 @@ def save_data(student_data, course_data):
         f.write(cr_data)
 
     
-    print("All student and course data saved successfully.")
+    #print("All student and course data saved successfully.")
 
 def load_data(student_data, course_data):
     st_dict = {}
@@ -151,10 +151,11 @@ def load_data(student_data, course_data):
             st.enroll_course(cr)
             cr.add_student(st)    
 
-    print("Data loaded successfully.")
+    #print("Data loaded successfully.")
 
 
 print("==== Student Management System ====")
+load_data(student_data, course_data) #loading data at the begining
 while True:
     choice = menu()
     print()
@@ -183,9 +184,11 @@ while True:
             cr.display_course_info()
         else:
             print("Course doesn't exist.") 
-    elif choice == 7:
-        save_data(student_data, course_data)
-    elif choice == 8:
-        load_data(student_data, course_data)     
+    # elif choice == 7:
+    #     save_data(student_data, course_data)
+    # elif choice == 8:
+    #     load_data(student_data, course_data)     
     else: #if user enters anything other than the given choices
         print("Input not valid. Kindly choose one of the available options")
+
+save_data(student_data, course_data) # saving data at the end of the program so we don't loose any information
