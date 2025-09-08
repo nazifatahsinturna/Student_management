@@ -2,7 +2,7 @@ from Student import Student
 from Course import Course
 import json
 
-student_data = {}
+student_data = {} #dictionaries to maintain objects
 course_data = {}
 def menu(): #function for menu
     print()
